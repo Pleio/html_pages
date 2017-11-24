@@ -1,0 +1,18 @@
+{
+    "name": "pleio/html_pages",
+    "description": "Create simple HTML pages from the admin panel.",
+    "type": "elgg-plugin",
+    "keywords": [
+        "elgg",
+        "plugin",
+        "html"
+    ],
+    "license": "GPL-2.0",
+    "support": {
+        "source": "https://github.com/Pleio/html_pages",
+        "issues": "https://github.com/Pleio/html_pages/issues"
+    },
+    "require": {
+        "composer/installers": "^1.0.8"
+    }
+}
