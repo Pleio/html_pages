@@ -1,6 +1,6 @@
 <?php
 
-$pages = get_input('pages');
+$pages = get_input('pages', null, false);
 
 // remove rows with empty source or value
 foreach ($pages as $i => $page) {
