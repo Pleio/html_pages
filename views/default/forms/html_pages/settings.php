@@ -1,4 +1,5 @@
 <?php
+$pages = elgg_extract("pages", $vars, []);
 
 echo "<div class=\"html_pages-table\">";
 
@@ -7,7 +8,7 @@ echo "<div class=\"html_pages-row html_pages-head\">";
     echo "<div class=\"html_pages-cell\">" . elgg_echo("html_pages:content") . "</div>";
 echo "</div>";
 
-foreach ($vars['pages'] as $i => $page) {
+foreach ($pages as $i => $page) {
     echo "<div class=\"html_pages-row\">";
 
     echo "<div class=\"html_pages-cell\">";
