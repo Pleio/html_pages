@@ -10,8 +10,11 @@ function html_pages_init() {
     elgg_extend_view('js/admin', 'html_pages/js/admin');
     elgg_extend_view('css/admin', 'html_pages/css/admin');
 
-    foreach (html_pages_get_pages() as $page) {
-        html_pages_register_page($page);
+    $pages = html_pages_get_pages();
+    if ($pages) {
+        foreach (html_pages_get_pages() as $page) {
+            html_pages_register_page($page);
+        }
     }
 }
 
