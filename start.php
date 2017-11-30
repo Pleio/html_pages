@@ -20,12 +20,15 @@ function html_pages_init() {
 
 function html_pages_get_pages() {
     static $pages;
-
     if ($pages) {
         return $pages;
     }
 
     $pages = json_decode(elgg_get_plugin_setting('pages', 'html_pages'), true);
+    if (!$pages) {
+        $pages = [];
+    }
+
     return $pages;
 }
 
