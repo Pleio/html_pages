@@ -54,6 +54,14 @@ function html_pages_pagesetup() {
     elgg_register_admin_menu_item('administer', 'html_pages', 'administer_utilities');
 }
 
+function html_pages_get_default_view() {
+    if (elgg_is_active_plugin("pleio_template")) {
+        return "react-default";
+    }
+
+    return "default";
+}
+
 function html_pages_index_handler($hook, $type, $return_value, $params) {
     $logged_in = elgg_is_logged_in();
 
@@ -61,12 +69,12 @@ function html_pages_index_handler($hook, $type, $return_value, $params) {
     $walled_garden = html_pages_get_page("walled_garden");
 
     if (!$logged_in && $walled_garden) {
-        echo elgg_view_page(null, $walled_garden['content'], "default");
+        echo elgg_view_page(null, $walled_garden['content'], html_pages_get_default_view());
         return true;
     }
 
     if ($logged_in && $index) {
-        echo elgg_view_page(null, $index['content'], "default");
+        echo elgg_view_page(null, $index['content'], html_pages_get_default_view());
         return true;
     }
 }
@@ -75,7 +83,7 @@ function html_pages_page_handler($hook, $type, $return_value, $params) {
     $page = html_pages_get_page($type);
 
     if ($page) {
-        echo elgg_view_page(null, $page['content'], "default");
+        echo elgg_view_page(null, $page['content'], html_pages_get_default_view());
         return true;
     }
 }
