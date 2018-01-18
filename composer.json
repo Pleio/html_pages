@@ -7,7 +7,7 @@
         "plugin",
         "html"
     ],
-    "license": "GPL-2.0",
+    "license": "GPL-2.0-or-later",
     "support": {
         "source": "https://github.com/Pleio/html_pages",
         "issues": "https://github.com/Pleio/html_pages/issues"
